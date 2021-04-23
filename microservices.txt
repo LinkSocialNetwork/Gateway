@@ -1,0 +1,87 @@
+
+################### Project 3 Services  ###################
+UserService,
+PostService,
+NotificationService,
+ChatroomService
+
+gateway service, 
+eureka service, 
+
+
+
+Below are the servcies in more detail. Each '*' below the service is a table that will be in the db for that servce. the indentation are the column names.
+
+
+
+################### Tables in User Service ###################
+DESCRIPTION: where all user information will exist. User service will contain 2 tables in the db as shown below.
+* users
+    id 
+    username
+    firstname
+    lastname
+    encrypted password
+    dob
+    email
+    bio
+    profile photo url
+    business name
+    date
+
+* follows (junction table)
+    uid
+    fid
+    date
+
+################### Tables in Post Service ###################
+DESCRIPTION: Post service will handle all posts. NOTE: we will have a minified user table that will mirror the users table in the user service. This is to have the related
+uid fk in the posts table
+* posts
+    post_id pk
+    post_title
+    post_content
+    post_image_link
+    youtube_link
+    posted_at
+    postlikes
+    commentpost
+
+* comments
+    comment_id
+    comment_content
+    commented_at
+    user_id
+    post_id
+
+* likes
+    like_id
+    user_id 
+    post_FK
+
+
+################### Tables in Notification Service ###################
+DESCRIPTION: Tables service will have a table with 3 foreign keys, userid, triggeredid and post id. This service will handle all of the notifications in the system. 
+* notifications
+    id
+    triggeredid
+    targetid
+    postid
+    type
+    read
+    date
+
+
+################### Tables in Chatroom Service ###################
+DESCRIPTION: Chatroom will not have any tables correlated to it but will have all of the websocket backend functionality in it for chatroom.
+
+
+
+
+
+################### Reposirtory Naming Convention ###################
+
+UserService
+PostService
+NotificationService
+ChatService
