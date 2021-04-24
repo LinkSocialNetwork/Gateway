@@ -17,6 +17,9 @@ public class SpringCloudGateway {
                         .path("/api/posts/**")
                         .uri("lb://postService"))
                 .route(myRoute -> myRoute
+                        .path("/api/likes/**")
+                        .uri("lb://postService"))
+                .route(myRoute -> myRoute
                         .path("/api/users/**")
                         .uri("lb://userService"))
                 .build();
