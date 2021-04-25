@@ -14,13 +14,10 @@ public class SpringCloudGateway {
     public RouteLocator gatewayRoutes(RouteLocatorBuilder builder){
         return builder.routes()
                 .route(myRoute -> myRoute
-                        .path("/api/posts/**")
+                        .path("/api/postservice/**")
                         .uri("lb://postService"))
                 .route(myRoute -> myRoute
-                        .path("/api/likes/**")
-                        .uri("lb://postService"))
-                .route(myRoute -> myRoute
-                        .path("/api/users/**")
+                        .path("/api/userservice/**")
                         .uri("lb://userService"))
                 .build();
     }
