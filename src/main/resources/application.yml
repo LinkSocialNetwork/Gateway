@@ -10,11 +10,14 @@ spring:
         corsConfigurations:
           '[/**]':
             allowedOrigins: http://localhost:4200
+            allowCredentials: true
+            allowedHeaders:
+              - content-type
             allowedMethods:
               - GET
               - POST
-              - DELETE
               - PUT
+              - DELETE
               - OPTIONS
 eureka:
   client:
