@@ -13,6 +13,7 @@ spring:
             allowCredentials: true
             allowedHeaders:
               - content-type
+              - token
             allowedMethods:
               - GET
               - POST
