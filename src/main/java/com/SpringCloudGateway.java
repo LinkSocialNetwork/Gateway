@@ -22,6 +22,10 @@ public class SpringCloudGateway {
                 .route(myRoute -> myRoute
                         .path("/api/notificationservice/**")
                         .uri("lb://notificationservice"))
+                .route(myRoute-> myRoute
+                        .path("/api/chatservice/**")
+                        .uri("lb://chatService")
+                )
                 .build();
     }
 
