@@ -4,6 +4,22 @@ server:
 spring:
   application:
     name: gateway
+  cloud:
+    gateway:
+      globalcors:
+        corsConfigurations:
+          '[/**]':
+            allowedOrigins: http://localhost:4200
+            allowCredentials: true
+            allowedHeaders:
+              - content-type
+              - token
+            allowedMethods:
+              - GET
+              - POST
+              - PUT
+              - DELETE
+              - OPTIONS
 eureka:
   client:
     service-url:
