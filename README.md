@@ -13,8 +13,9 @@ Gateway is the routing manager that serves as the point of entry for the fronten
 
 ## Features
 
-- Uses a single port that can recieve requests dependent on all other services.
-- Sends requests to the proper services.
+- Uses a single port that can recieve requests from the front end.
+- Routes request based on service availability that Eureka keeps account of. 
+- If service is up, sends request to the proper service.
 
 ## Getting Started
    
